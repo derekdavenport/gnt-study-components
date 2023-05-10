@@ -1,0 +1,41 @@
+{
+  "name": "gnt-study-components",
+  "version": "1.0.0",
+  "description": "GNT Study React Components to use in Anki Template",
+  "type": "module",
+  "source": "src/index.ts",
+  "exports": {
+    "types": "./dist/index.d.ts",
+    "require": "./dist/index.cjs",
+    "modern": "./dist/index.module.mjs",
+    "default": "./dist/index.modern.js"
+  },
+  "main": "dist/index.cjs",
+  "module": "dist/index.module.mjs",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "microbundle -i ./src/index.ts -f modern,esm,cjs --compress false",
+    "dev": "microbundle watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "anki",
+    "react",
+    "components"
+  ],
+  "author": "Derek Davenport",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/react": "^18.0.38",
+    "microbundle": "file:../microbundle",
+    "rimraf": "^5.0.0",
+    "typescript": "^5.0.4"
+  },
+  "dependencies": {
+    "jotai": "^2.0.4",
+    "react": "^18.2.0"
+  }
+}
